@@ -1,0 +1,20 @@
+type: window # single|window
+mode: session_based # session_based | session_aware
+preprocessor: inda #
+data:
+  folder: data/inda/raw/
+  prefix: inda
+
+filter:
+  min_item_support: 2
+  min_session_length: 2
+  min_user_sessions: 3 # min need to be 3: 1 for validation, 1 for test and 1 for train
+
+params:
+  days_test: 4
+  days_train: 60 #only window
+  num_slices: 5 #only window
+  days_offset: 7 #only window
+  days_shift: 65 #only window
+output:
+  folder: data/inda/slices/
